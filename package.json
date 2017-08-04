@@ -1,0 +1,15 @@
+{
+  "name": "summerproject",
+  "version": "1.0.0",
+  "description": "bot, nodejs, azure, api",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "40371231h@live.ntnu.edu.tw",
+  "license": "MIT",
+  "dependencies": {
+    "botbuilder": "^3.9.0",
+    "restify": "^5.0.1"
+  }
+}
