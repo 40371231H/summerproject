@@ -20,7 +20,8 @@ server.post('/api/messages', connector.listen());
 var bot = new builder.UniversalBot(connector, function (session) {
     if(session.message.text == 計算機){
         session.send("為你開啟計算機");
-        session.send("請輸入低一個數字");
+        session.send("請輸入第一個數字");
     }
-    session.send("You said: %s !!", session.message.text);
+    else
+        session.send("You said: %s !!", session.message.text);
 });
