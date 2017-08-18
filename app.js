@@ -18,10 +18,12 @@ server.post('/api/messages', connector.listen());
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
 var bot = new builder.UniversalBot(connector, function (session) {
-    if(session.message.text == '計算機'){
-        session.send("為你開啟計算機");
-        session.send("請輸入第一個數字");
+    switch(session.message.text){
+        case '計算機':
+            session.send("為你開啟計算機");
+            session.send("請輸入第一個數字");
+            break;
+        default :
+            session.send("You said: %s !!", session.message.text);
     }
-    else
-        session.send("You said: %s !!", session.message.text);
 });
