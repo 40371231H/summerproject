@@ -17,19 +17,19 @@ module.exports = [
         session.send(
             '尋找關於 %s 天氣', destination);
 
-        // Async search
-        Store
-            .searchWeathers(destination)
-            .then(function (weathers) {
-                // Results
-                var message = new builder.Message()
-                    .attachmentLayout(builder.AttachmentLayout.carousel)
-                    .attachments(weathers.map(weatherAsAttachment));
+        // // Async search
+        // Store
+        //     .searchWeathers(destination)
+        //     .then(function (weathers) {
+        //         // Results
+        //         var message = new builder.Message()
+        //             .attachmentLayout(builder.AttachmentLayout.carousel)
+        //             .attachments(weathers.map(weatherAsAttachment));
 
-                session.send(message);
+        //         session.send(message);
 
-                // End
-                session.endDialog();
-            });
+        //         // End
+        //         session.endDialog();
+        //     });
     }
 ];
