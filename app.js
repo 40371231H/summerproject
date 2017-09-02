@@ -20,6 +20,7 @@ server.post('/api/messages', connector.listen());
 
 var DialogLabels = {
     Weathers: 'Weathers',
+    Navigations: 'Navigations',
     Times: 'Times'
 };
 
@@ -30,7 +31,7 @@ var bot = new builder.UniversalBot(connector, [
         builder.Prompts.choice(
             session,
             '請問你要使用何項功能？',
-            [DialogLabels.Times, DialogLabels.Weathers],
+            [DialogLabels.Times, DialogLabels.Weathers, DialogLabels.Navigations],
             {
                 maxRetries: 3,
                 retryPrompt: 'Not a valid option'
@@ -56,12 +57,15 @@ var bot = new builder.UniversalBot(connector, [
                 return session.beginDialog('times');
             case DialogLabels.Weathers:
                 return session.beginDialog('weathers');
+            case DialogLabels.Navigations:
+                return session.beginDialog('navigations');
         }
     }
 ]);
 
 bot.dialog('times', require('./times'));
 bot.dialog('weathers', require('./weathers'));
+bot.dialog('navigations', require('./navigations'));
 bot.dialog('support', require('./support'))
     .triggerAction({
         matches: [/help/i, /support/i, /problem/i]
