@@ -7,14 +7,28 @@ module.exports = [
         session.send('歡迎來到導航功能');
         builder.Prompts.text(session, '請輸入你的出發地');
     },
+    function (session, results, next) {
+        session.dialogData.startPoint = results.response;
+        next();
+    },
+
+    // Destination end
+    function (session) {
+        session.send('歡迎來到導航功能');
+        builder.Prompts.text(session, '請輸入你的目的地');
+    },
+    function (session, results, next) {
+        session.dialogData.endPoint = results.response;
+        next();
+    },
 
     // Search...
     function (session, results) {
         session.dialogData.destination = results.response;
-        var destination = session.dialogData.destination;
+        var startPoint = session.dialogData.startPoint;
+        var endPoint = session.dialogData.endPoint;
 
-        session.send(
-            '尋找關於 %s 天氣', destination);
+        session.send('尋找關於 %s 到 %s 的路線', startPoint, endPoint);
 
         // // Async search
         // Store
