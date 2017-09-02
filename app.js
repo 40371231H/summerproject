@@ -29,7 +29,7 @@ var bot = new builder.UniversalBot(connector, [
         // prompt for search option
         builder.Prompts.choice(
             session,
-            'Are you looking for a flight or a hotel?',
+            '請問你要使用何項功能？',
             [DialogLabels.Times, DialogLabels.Weathers],
             {
                 maxRetries: 3,
@@ -39,7 +39,7 @@ var bot = new builder.UniversalBot(connector, [
     function (session, result) {
         if (!result.response) {
             // exhausted attemps and no selection, start over
-            session.send('Ooops! Too many attemps :( But don\'t worry, I\'m handling that exception and you can try again!');
+            session.send('嘗試太多次，將重新導覽。');
             return session.endDialog();
         }
 

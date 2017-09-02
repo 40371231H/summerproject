@@ -37,7 +37,7 @@ module.exports = [
 function weatherAsAttachment(weather) {
     return new builder.HeroCard()
         .title(weather.name)
-        .subtitle('查詢結果')
+        .subtitle('查詢結果：天氣為' + weather.name)
         .images([new builder.CardImage().url(weather.image)])
         .buttons([
             new builder.CardAction()

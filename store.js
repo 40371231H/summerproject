@@ -8,7 +8,7 @@ module.exports = {
             var weathers = [];
             for (var i = 1; i <= 1; i++) {
                 weathers.push({
-                    name: destination + ' Weather ',
+                    name: destination + ' 天氣 ',
                     location: destination,
                     image: 'https://placeholdit.imgix.net/~text?txtsize=35&txt=Weather+' + i + '&w=500&h=260'
                 });
