@@ -1,15 +1,30 @@
 {
   "name": "summerproject",
-  "version": "1.0.0",
-  "description": "bot, nodejs, azure, api",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "40371231h@live.ntnu.edu.tw",
   "license": "MIT",
+  "version": "1.0.8",
+  "description": "bot, nodejs, azure, api",
+  "keywords": [
+    "summerproject"
+  ],
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
+    "bluebird": "^3.5.0",
     "botbuilder": "^3.9.0",
+    "dotenv-extended": "^2.0.1",
     "restify": "^5.0.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/40371231H/summerproject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/40371231H/summerproject/issues"
+  },
+  "homepage": "https://github.com/40371231H/summerproject#readme"
 }
