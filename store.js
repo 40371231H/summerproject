@@ -6,9 +6,9 @@ module.exports = {
 
             // Filling the weathers results manually just for demo purposes
             var weathers = [];
-            for (var i = 1; i <= 5; i++) {
+            for (var i = 1; i <= 1; i++) {
                 weathers.push({
-                    name: destination + ' Weather ' + i,
+                    name: destination + ' Weather ',
                     location: destination,
                     image: 'https://placeholdit.imgix.net/~text?txtsize=35&txt=Weather+' + i + '&w=500&h=260'
                 });
