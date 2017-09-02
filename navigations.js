@@ -1,9 +1,8 @@
 //https://www.google.com.tw/maps/dir/"起點"/"終點"/
-//https://www.google.com.tw/maps/dir/"起點"/"終點"/
 var builder = require('botbuilder');
 
 module.exports = [
-    // Destination
+    // Destination start
     function (session) {
         session.send('歡迎來到導航功能');
         builder.Prompts.text(session, '請輸入你的出發地');
