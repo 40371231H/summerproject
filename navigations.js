@@ -34,7 +34,7 @@ module.exports = [
                     .title('路線')
                     .subtitle('從 %s 到 %s', startPoint, endPoint)
                     .images([
-                        builder.CardImage.create(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/320px-Seattlenighttimequeenanne.jpg")
+                        builder.CardImage.create(session, 'https://placeholdit.imgix.net/~text?txtsize=35&txt=Map+&w=500&h=260')
                     ])
                     .buttons([
                         builder.CardAction.openUrl(session, 'https://www.google.com.tw/maps/dir/' + startPoint + '/' + endPoint + '/', 'Get Started')
