@@ -69,7 +69,7 @@ var bot = new builder.UniversalBot(connector, [
 bot.dialog('times', require('./times'));
 bot.dialog('weathers', require('./weathers'));
 bot.dialog('navigations', require('./navigations'));
-bot.dialog('exchanges', require('./exchanges'))
+bot.dialog('exchanges', require('./exchanges'));
 bot.dialog('support', require('./support'))
     .triggerAction({
         matches: [/help/i, /support/i, /problem/i]
