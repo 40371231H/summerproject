@@ -21,7 +21,8 @@ server.post('/api/messages', connector.listen());
 var DialogLabels = {
     Weathers: 'Weathers',
     Navigations: 'Navigations',
-    Times: 'Times'
+    Times: 'Times',
+    Exchanges: 'Exchanges'
 };
 
 // Receive messages from the user and respond by echoing each message back (prefixed with 'You said:')
@@ -31,7 +32,7 @@ var bot = new builder.UniversalBot(connector, [
         builder.Prompts.choice(
             session,
             '請問你要使用何項功能？',
-            [DialogLabels.Times, DialogLabels.Weathers, DialogLabels.Navigations],
+            [DialogLabels.Times, DialogLabels.Weathers, DialogLabels.Navigations, DialogLabels.Exchanges],
             {
                 maxRetries: 3,
                 retryPrompt: 'Not a valid option'
@@ -59,6 +60,8 @@ var bot = new builder.UniversalBot(connector, [
                 return session.beginDialog('weathers');
             case DialogLabels.Navigations:
                 return session.beginDialog('navigations');
+            case DialogLabels.Exchanges:
+                return session.beginDialog('exchanges');
         }
     }
 ]);
@@ -66,6 +69,7 @@ var bot = new builder.UniversalBot(connector, [
 bot.dialog('times', require('./times'));
 bot.dialog('weathers', require('./weathers'));
 bot.dialog('navigations', require('./navigations'));
+bot.dialog('exchanges', require('./exchanges'))
 bot.dialog('support', require('./support'))
     .triggerAction({
         matches: [/help/i, /support/i, /problem/i]
