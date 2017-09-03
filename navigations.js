@@ -47,6 +47,7 @@ module.exports = [
         //         // End
         //         session.endDialog();
         //     });
+        session.endDialog();
     },
 
     /*function createMapCard(session) {
