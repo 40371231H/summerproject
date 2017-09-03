@@ -27,10 +27,6 @@ module.exports = [
         var endPoint = session.dialogData.endPoint;
 
         session.send('尋找關於 %s 到 %s 的路線', startPoint, endPoint);
-        //session.send('尋找關於 ' + startPoint + ' 到 ' + endPoint + '的路線');
-        session.send('https://www.google.com.tw/maps/dir/' + startPoint + '/' + endPoint + '/');
-        //builder.CardAction.openUrl(session, 'https://www.google.com.tw/maps/dir/' + startPoint + '/' + endPoint + '/', 'Get Started');
-        //createMapCard(session);
 
         var msg = new builder.Message(session)
             .attachments([
