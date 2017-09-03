@@ -1,6 +1,5 @@
 var builder = require('botbuilder');
 
-
 module.exports = [
     // Destination start
     function (session) {
@@ -33,33 +32,19 @@ module.exports = [
         //builder.CardAction.openUrl(session, 'https://www.google.com.tw/maps/dir/' + startPoint + '/' + endPoint + '/', 'Get Started');
         //createMapCard(session);
 
-        // Async search
-        // Store
-        //     .searchWeathers(destination)
-        //     .then(function (weathers) {
-        //         // Results
-        //         var message = new builder.Message()
-        //             .attachmentLayout(builder.AttachmentLayout.carousel)
-        //             .attachments(weathers.map(weatherAsAttachment));
-
-        //         session.send(message);
-
-        //         // End
-        //         session.endDialog();
-        //     });
-        session.endDialog();
-    },
-
-    /*function createMapCard(session) {
-        return new builder.MapCard(session)
-            .title('路線')
-            .subtitle('從 %s 到 %s', startPoint, endPoint)
-            .text('幫你搜尋到的路線')
-            .images([
-                builder.CardImage.create(session, 'https://sec.ch9.ms/ch9/7ff5/e07cfef0-aa3b-40bb-9baa-7c9ef8ff7ff5/buildreactionbotframework_960.jpg')
-            ])
-            .buttons([
-                builder.CardAction.openUrl(session, 'https://www.google.com.tw/maps/dir/台北/高雄市/', 'Get Started')
+        var msg = new builder.Message(session)
+            .attachments([
+                new builder.HeroCard(session)
+                    .title('路線')
+                    .subtitle('從 %s 到 %s', startPoint, endPoint)
+                    .images([
+                        builder.CardImage.create(session, "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Seattlenighttimequeenanne.jpg/320px-Seattlenighttimequeenanne.jpg")
+                    ])
+                    .buttons([
+                        builder.CardAction.openUrl(session, 'https://www.google.com.tw/maps/dir/' + startPoint + '/' + endPoint + '/', 'Get Started')
+                    ])
             ]);
-    }*/
+        session.send(msg);
+        session.endDialog();
+    }
 ];
