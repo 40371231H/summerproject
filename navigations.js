@@ -1,7 +1,5 @@
-//https://www.google.com.tw/maps/dir/"起點"/"終點"/
 var builder = require('botbuilder');
 
-var MapCardName = 'Map card';
 
 module.exports = [
     // Destination start
@@ -34,7 +32,8 @@ module.exports = [
         session.send('https://www.google.com.tw/maps/dir/' + startPoint + '/' + endPoint + '/');
         //builder.CardAction.openUrl(session, 'https://www.google.com.tw/maps/dir/' + startPoint + '/' + endPoint + '/', 'Get Started');
         //createMapCard(session);
-        // // Async search
+
+        // Async search
         // Store
         //     .searchWeathers(destination)
         //     .then(function (weathers) {
@@ -48,6 +47,7 @@ module.exports = [
         //         // End
         //         session.endDialog();
         //     });
+        session.endDialog();
     },
 
     /*function createMapCard(session) {

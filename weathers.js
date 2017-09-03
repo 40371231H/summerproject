@@ -13,8 +13,7 @@ module.exports = [
         session.dialogData.destination = results.response;
         var destination = session.dialogData.destination;
 
-        session.send(
-            '尋找關於 %s 天氣', destination);
+        session.send('尋找關於 %s 天氣', destination);
 
         // Async search
         Store
